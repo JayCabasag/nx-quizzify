@@ -1,0 +1,23 @@
+.user-actions-list {
+    margin-top: 15px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.user-action-item button {
+    padding: 8px;
+    background-color: var(--white-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    width: 100%;
+}
+
+.user-action-item button:hover {
+    background: var(--primary-color);
+    color: white;
+}

@@ -1,0 +1,51 @@
+.toast-container {
+    position: absolute;
+    left: 50%;
+    top: 15px;
+    transform: translateX(-50%);
+    min-width: max-content;
+}
+
+.hide-toast {
+    display: none;
+}
+
+.dialog {
+    padding: 5px 15px;
+    box-shadow: 1px 2px 5px 0px rgba(110, 107, 107, 0.75);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.dialog-error {
+    padding: 5px 15px;
+    box-shadow: 1px 2px 5px 0px rgba(110, 107, 107, 0.75);
+    border-radius: 5px;
+    color: var(--red-color);
+}
+
+.dialog-success {
+    padding: 5px 15px;
+    box-shadow: 1px 2px 5px 0px rgba(110, 107, 107, 0.75);
+    border-radius: 5px;
+    color: var(--success-color);
+}
+
+.close-button {
+    padding: unset;
+    outline: unset;
+    background-color: unset;
+    border: unset;
+}
+
+.close-icon {
+    color: var(--red-color);
+    margin-top: 6px;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}

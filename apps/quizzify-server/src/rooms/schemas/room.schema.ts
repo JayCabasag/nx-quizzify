@@ -1,0 +1,16 @@
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Schema as MongooseSchema } from "mongoose";
+@Schema({
+    timestamps: true
+})
+
+export class Room {
+    @Prop()
+    code: string
+
+    @Prop({ type: MongooseSchema.Types.ObjectId, ref: 'User' })
+    teacher: MongooseSchema.Types.ObjectId;
+}
+
+
+export const RoomSchema = SchemaFactory.createForClass(Room)

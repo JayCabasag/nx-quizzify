@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="logo-header">
+        <img src="assets/logo.png" height="100px">
+    </div>
+    <form class="form" (submit)="onSubmit()" [formGroup]="signInForm">
+        <h2>Sign in</h2>
+        <div class="role-button-wrapper">
+            <button type="button" class="role-button"
+                [ngClass]="{ 'active-role-button' : signInForm.get('role')?.value === 'student'}"
+                (click)="updateRole('student')" [disabled]="isSubmitting">
+                Student
+            </button>
+            <button type="button" class="role-button"
+                [ngClass]="{ 'active-role-button' : signInForm.get('role')?.value === 'teacher'}"
+                (click)="updateRole('teacher')" [disabled]="isSubmitting">
+                Teacher
+            </button>
+        </div>
+        <label>Email</label>
+        <input type="email" placeholder="Email" class="input" formControlName="email" />
+        <label>Password</label>
+        <input type="password" placeholder="Password" class="input" formControlName="password" />
+        <button class="submit" type="submit" [disabled]="isSubmitting">
+            {{
+            isSubmitting
+            ? 'Please wait...'
+            : 'Sign in'
+            }}
+        </button>
+        <a routerLink="/auth/signup">Sign up</a>
+    </form>
+</div>

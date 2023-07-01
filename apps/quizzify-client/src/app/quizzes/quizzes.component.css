@@ -1,0 +1,31 @@
+.navbar {
+    background-color: white;
+    box-shadow: 0px 0px 2px 0px rgba(110, 107, 107, 0.75);
+    padding: 5px 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-wrapper {
+    display: flex;
+    color: var(--black-color);
+    width: 100%;
+}
+
+.logo-image-wrapper img {
+    height: 60px;
+    width: auto;
+}
+
+.section {
+    padding: 15px 35px;
+    display: flex;
+    gap: 25px;
+}
+
+.header-text {
+    margin-top: 15px;
+    margin-left: 25px;
+}
