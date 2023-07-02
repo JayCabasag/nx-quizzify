@@ -4,13 +4,15 @@ import { User } from "../_model/user.model";
 import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Router } from "@angular/router";
 import { ToastService } from "./toast.service";
+import { CurrentUser } from "./constants";
 
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
 
-    url = 'http://localhost:8000/api/v1'
+    url = 'http://localhost:8000/api/v1';
+    currentUser: null | CurrentUser = null;
 
     private userSubject: BehaviorSubject<User | null>;
     public user: Observable<User | null>;
@@ -30,6 +32,10 @@ export class UserService {
         this.user = this.userSubject.asObservable();
     }
 
+    getCurrentUser() {
+        return this.currentUser
+    }
+
     isAuthenticated(): Observable<boolean> {
         const token = localStorage.getItem('token') ?? null
 
@@ -44,6 +50,7 @@ export class UserService {
                 const { user } = response;
                 // Perform additional checks if needed
                 const isValidUser = user && (user.type === 'student' || user.type === 'teacher');
+                this.currentUser = user
                 return isValidUser;
             }),
             catchError((error: any) => {
@@ -61,6 +68,7 @@ export class UserService {
                     if (response) {
                         localStorage.setItem('token', response.access_token);
                         this.toastService.alertToast('Logged in successfully', 'success');
+                        this.currentUser = response.user
                         this.routeUser(response.user.type)
                     } else {
                         this.toastService.alertToast('Error occurred while signing in', 'error');

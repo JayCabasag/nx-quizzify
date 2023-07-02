@@ -6,7 +6,9 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { QuizzesComponent } from './quizzes/quizzes.component';
-import { authGuard } from './auth/auth.guard';
+import { AuthGuard } from './auth/auth.guard';
+import { DashboardGuard } from './dashboard/dashboard.guard';
+import { QuizzesGuard } from './quizzes/quizzes.guard';
 
 const routes: Routes = [
   { path: '', component: RootComponent, title: 'root' },
@@ -17,8 +19,8 @@ const routes: Routes = [
       { path: 'signup', component: SignupComponent, title: 'signup' },
     ]
   },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [authGuard], title: 'Quizzify | dashboard' },
-  { path: 'quizzes', component: QuizzesComponent, canActivate: [authGuard], title: 'Quizzify | quizzes' },
+  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard, DashboardGuard], title: 'Quizzify | dashboard' },
+  { path: 'quizzes', component: QuizzesComponent, canActivate: [AuthGuard, QuizzesGuard], title: 'Quizzify | quizzes' },
   { path: '**', component: PagenotfoundComponent, title: 'Page not found' }
 ];
 

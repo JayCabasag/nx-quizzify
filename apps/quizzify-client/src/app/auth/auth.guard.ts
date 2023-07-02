@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
 import { UserService } from '../_services/user.service';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const AuthGuard: CanActivateFn = (route, state) => {
   const userService = inject(UserService)
   const router = inject(Router)
 
@@ -10,7 +10,8 @@ export const authGuard: CanActivateFn = (route, state) => {
     if (isVerified) {
       return true
     } else {
-      return router.navigateByUrl('/auth/signin')
+      router.navigateByUrl('/auth/signin')
+      return false
     }
   })
 
