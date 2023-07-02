@@ -4,18 +4,18 @@ Welcome to Quizzify! This is a monorepo for an online quizzing app that consists
 
 ## Quizzify Server
 
-The Quizzify Server is the backend application for the Quizzify platform. It handles authentication, manages quizzes, questions, and user responses, and provides the necessary APIs for the Quizzify Client to interact with. The server is built using [insert backend technology/framework here], and its code resides in the `quizzify-server` directory.
+The Quizzify Server is the backend application for the Quizzify platform. It is built using NestJS, a progressive Node.js framework, and utilizes MongoDB for data storage. The server handles authentication, manages quizzes, questions, and user responses, and provides the necessary APIs for the Quizzify Client to interact with. The server code resides in the `quizzify-server` directory.
 
 ## Quizzify Client
 
-The Quizzify Client is the frontend application for the Quizzify platform. It provides a user-friendly interface for users to browse quizzes, take quizzes, and view their quiz history. The client is built using [insert frontend technology/framework here], and its code resides in the `quizzify-client` directory.
+The Quizzify Client is the frontend application for the Quizzify platform. It is built using Angular, a popular TypeScript-based web application framework. The client provides a user-friendly interface for users to browse quizzes, take quizzes, and view their quiz history. The client code resides in the `quizzify-client` directory.
 
 ## Getting Started
 
 To get started with Quizzify, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/quizzify.git`
-2. Install the dependencies: `cd nx-quizzify && npm install`
+2. Install the dependencies: `cd quizzify && npm install`
 3. Start the Quizzify Server: `nx serve quizzify-server`
 4. Start the Quizzify Client: `nx serve quizzify-client`
 
@@ -42,7 +42,9 @@ Quizzify is licensed under the [MIT License](LICENSE). Feel free to use, modify,
 We would like to thank the following open-source projects and libraries that made Quizzify possible:
 
 - [Nx](https://nx.dev)
-- [Insert other dependencies and libraries here]
+- [NestJS](https://nestjs.com)
+- [MongoDB](https://www.mongodb.com)
+- [Angular](https://angular.io)
 
 ## Contact
 
