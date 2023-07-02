@@ -14,7 +14,7 @@ The Quizzify Client is the frontend application for the Quizzify platform. It is
 
 To get started with Quizzify, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your-username/quizzify.git`
+1. Clone the repository: `git clone https://github.com/JayCabasag/nx-quizzify.git`
 2. Install the dependencies: `cd quizzify && npm install`
 3. Start the Quizzify Server: `nx serve quizzify-server`
 4. Start the Quizzify Client: `nx serve quizzify-client`
